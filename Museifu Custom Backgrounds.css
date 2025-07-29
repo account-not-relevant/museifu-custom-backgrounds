@@ -12,9 +12,7 @@ https://angel-rs.github.io/css-color-filter-generator
                 
 
 
-             +   Museifu Custom Backgrounds by Museifu's Creator v1.0  +
-
-v1.0 changes: forked CyanVoxel and organized code.
+             +   Museifu Custom Backgrounds by Museifu's Creator v1.1.1  +
 
 The Museifu theme was a theme I've made only for myself, so many concepts I use and snippets for it
 are inspired by other themes and snippets (in some cases, just like this one, it's basically an improved
@@ -49,6 +47,7 @@ https://github.com/account-not-relevant
   --pen-museifu-dark: #838383;
   --pen-museifu-cream: #804620; 
   --pen-museifu-paperlike: #32302c;
+  --pen-museifu-paperdark: #beb7b7;
 
   --neutral-pen-black: #272727;
   --neutral-pen-black-trans: #27272722;
@@ -58,8 +57,9 @@ https://github.com/account-not-relevant
   --page-manila: #f3deaf;
   --page-blue: #3f76ed;
   --page-museifu-dark: #0c0c0c;
-  --page-museifu-cream: #c9bdad;
-  --page-museifu-paperlike: #ffffff; 
+  --page-museifu-cream: #ffd698;
+  --page-museifu-paperlike: #ffffff;
+  --page-museifu-paperdark: #000000;
 
   /* Default Variables */
   --page-color: var(--page-manila);
@@ -91,7 +91,8 @@ https://github.com/account-not-relevant
 .page-blueprint,
 .page-museifu-dark,
 .page-museifu-cream,
-.page-museifu-paperlike {
+.page-museifu-paperlike,
+.page-museifu-paperdark {
   --text-normal: var(--accent-color);
   --text-muted: var(--accent-color);
   --text-faint: var(--accent-color-trans);
@@ -210,6 +211,9 @@ https://github.com/account-not-relevant
   --link-external-color: (var(--accent-color));
   --text-highlight-bg: var(--accent-color-trans);
   --code-background: var(--accent-color);
+  --link-color-hover: #ffffff;
+  --link-unresolved-color: #686868;
+
 }
 
 .page-museifu-cream {
@@ -230,6 +234,9 @@ https://github.com/account-not-relevant
   --text-highlight-bg: rgb(233, 207, 167);
   --code-background: var(--accent-color);
   --text-selection: rgba(167, 127, 75, 0.555);
+  --link-color-hover: #ff6f0f;
+  --link-unresolved-color: #c48136;
+
 }
 
 .page-museifu-paperlike {
@@ -250,6 +257,8 @@ https://github.com/account-not-relevant
   --text-highlight-bg: rgb(177, 177, 177);
   --text-selection: rgba(167, 167, 167, 0.555);
   --code-background: #6d6d6d;
+  --link-color-hover: #000000;
+  --link-unresolved-color: #757575;
 }
 
 .page-museifu-paperlike::before { 
@@ -257,15 +266,56 @@ https://github.com/account-not-relevant
   background-color: var(--accent-color);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
   background-repeat: repeat;
-  background-size: 100%;
+  background-size: 1300px;
   opacity: 0.32;
-  top: 0px;
+  top: 20px;
   left: 0px;
   position: fixed;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  border-radius: 40px;
 }
+
+.page-museifu-paperdark {
+  --page-color: var(--page-museifu-paperdark);
+  --accent-color: var(--pen-museifu-paperdark);
+  --accent-color-trans: color-mix(
+    in srgb,
+    var(--accent-color) 15%,
+    transparent
+  );
+  --image-effect: brightness(0) saturate(100%) invert(16%) sepia(15%) saturate(270%) hue-rotate(2deg) brightness(100%) contrast(92%);
+  /* wrong image effect */
+
+  color-scheme: dark;
+  --hr-color: var(--accent-color);
+  --bold-color: #e9e9e9;
+  --italic-color: #d8d8d8;
+  --link-color: #ffffff;
+  --link-external-color: #ffffff;
+  --link-color: var(--bold-color);
+  --link-unresolved-color: #979797;
+  --text-highlight-bg: var(--accent-color-trans);
+  --link-color-hover: #dbdbdb;
+}
+
+.page-museifu-paperdark::before { 
+  content: "";
+  background-color: var(--accent-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 1300px;
+  opacity: 0.32;
+  top: 20px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 40px;
+}
+
 
 /* Adds a grid layout on page background */
 .page-grid {
@@ -304,7 +354,8 @@ https://github.com/account-not-relevant
     .pen-purple,
     .pen-museifu-dark,
     .pen-museifu-cream,
-    .pen-museifu-paperlike
+    .pen-museifu-paperlike,
+    .pen-museifu-paperdark
   )
   svg {
   color: color-mix(in srgb, var(--accent-color) 60%, transparent);
@@ -421,6 +472,8 @@ https://github.com/account-not-relevant
   --code-background: var(--accent-color);
   --link-color: (var(--accent-color));
   --text-highlight-bg: var(--accent-color-trans);
+  --link-color-hover: #ffffff;
+  --link-unresolved-color: #686868;
 
   --h1-color: var(--museifu-light-gray);
   --h2-color: var(--museifu-light-gray);
@@ -441,6 +494,8 @@ https://github.com/account-not-relevant
   --code-background: var(--accent-color);
   --link-color: (var(--accent-color));
   --text-highlight-bg: var(--accent-color-trans);
+  --link-color-hover: #ff6f0f;
+  --link-unresolved-color: #c48136;
 
   }
 
@@ -453,9 +508,26 @@ https://github.com/account-not-relevant
   --bold-color: #6d6d6d;
   --italic-color: #6d6d6d;
   --code-background: var(--bold-color);
-  --link-color: (var(--accent-color));
   --text-highlight-bg: var(--accent-color-trans);
+  --link-color-hover: #000000;
+  --link-unresolved-color: #757575;
+}
 
+.pen-museifu-paperdark {
+  --accent-color: var(--pen-museifu-paperdark);
+  --accent-color-trans: color-mix(in srgb, var(--pen-museifu-paperdark) 15%, transparent);
+  color: var(--accent-color);
+  --image-effect: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(1248%) hue-rotate(250deg) brightness(103%) contrast(92%);
+  /* wrong image effect */
+  --hr-color: var(--accent-color);
+  --bold-color: #e9e9e9;
+  --italic-color: #d8d8d8;
+  --link-color: #ffffff;
+  --link-external-color: #ffffff;
+  --link-color: var(--bold-color);
+  --text-highlight-bg: var(--accent-color-trans);
+  --link-color-hover: #dbdbdb;
+  --link-unresolved-color: #979797;
 }
 
 /* +   CUSTOM PAGE VARIATIONS   + */

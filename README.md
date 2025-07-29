@@ -1,5 +1,6 @@
-# Museifu Custom Backgrounds v1.1.0
-Custom backgrounds adapted or created for the [Museifu Theme](https://github.com/account-not-relevant/museifu-theme) on Obsidian.
+# Museifu Custom Backgrounds v1.1.1
+Custom backgrounds adapted or created for the [Museifu Theme](https://github.com/account-not-relevant/museifu-theme) on Obsidian. This CSS snippet is needed for Museifu Theme work accordingly, so have it activated all the time, even if not using the note modifications, if you plan on using Museifu.
+
 Based on [Obsidian Notebook Themes](https://github.com/CyanVoxel/Obsidian-Notebook-Themes) v2.1.0.
 
 _Work in progress._
@@ -26,6 +27,7 @@ _Work in progress._
 - `pen-museifu-dark` - applies the pen color of Museifu Dark 
 - `pen-museifu-cream` - applies the pen color of Museifu Cream
 - `pen-museifu-paperlike` - applies the pen color of Museifu Paperlike
+- `pen-museifu-paperdark` - applies the pen color of Museifu Darkpaper
 
 ### Page colors and effects
   - `page-dots` - adds dots to the page background
@@ -40,6 +42,7 @@ _Work in progress._
   - `page-museifu-dark` - turns the background darker (when compared to Museifu Theme's default)
   - `page-museifu-cream` - turns the background cream-like (very light brown)
   - `page-museifu-paperlike` - turns the background white and adds a paper effect to it
+  - `page-museifu-paperdark` - turns the background gray and adds a paper effect to it
   - `soft-block-grid` - turns the background into a blocky, gray one (must apply some grid before)
   - `black-block-grid` - turns the background into a blocky, black one (must apply some grid before)
 
@@ -51,7 +54,7 @@ The classes below are made to work with Museifu Theme only:
   - `museifu-limijust` - adds the limit effect, then the justify one (CURRENTLY THE CLASS IS `museifu-justicenter` - _my bad, I'll fix it_)
   - `museifu-large-kanban` - adds some width to the kanban note
   - `museifu-banner` - adds the image that has "museifu-banner" on its alt text as the banner. If the image has "museifu-banner-fade", it adds the banner with a little fade
-  - `museifu-banner-recolor` - when using an image as a banner, it paints it with the accent color of the pen color you are using. Notice that page effects bring their own pen-colors and also that it won't add a filter, but really PAINT the image.
+  - `museifu-banner-recolor` - when using an image as a banner, paints it with the accent color of the pen color you are using. Notice that page effects bring their own pen colors and also that it won't add a filter, but really PAINT the image with the color.
 
 ### Page combos you should try using:
 
@@ -72,3 +75,6 @@ The classes below are made to work with Museifu Theme only:
 	- `page-museifu-paperlike`
 	- `pen-red`
 - Remember Museifu is a **modular theme!** Try your own variations!
+
+## Warnings
+1. **Turn Page Preview off on "Core Plugins":** Page preview doesn't work well with `paperlike` page effects, such as `page-museifu-paperlike` and `page-museifu-paperdark`. Hovering over an internal link leads to the paper effect being applied to the whole page. _While you can just avoid applying `paperlike` page effects on notes you would usually hover over, I still recommend turning the feature off (or applying the "hold Ctrl/Cmd to preview" setting for all options). Of course, if possible, I will fix it sometime in the future.

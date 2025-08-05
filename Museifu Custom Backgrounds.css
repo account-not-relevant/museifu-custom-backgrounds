@@ -12,7 +12,7 @@ https://angel-rs.github.io/css-color-filter-generator
                 
 
 
-             +   Museifu Custom Backgrounds by Museifu's Creator v1.1.1  +
+             +   Museifu Custom Backgrounds by Museifu's Creator v1.1.2  +
 
 The Museifu theme was a theme I've made only for myself, so many concepts I use and snippets for it
 are inspired by other themes and snippets (in some cases, just like this one, it's basically an improved
@@ -48,18 +48,21 @@ https://github.com/account-not-relevant
   --pen-museifu-cream: #804620; 
   --pen-museifu-paperlike: #32302c;
   --pen-museifu-paperdark: #beb7b7;
+  --pen-museifu-simple: var(--pen-white);
 
   --neutral-pen-black: #272727;
   --neutral-pen-black-trans: #27272722;
 
   /* Page Colors */
-  --page-white: #e7e7e7;
+  --page-white: #d3d3d3;
   --page-manila: #f3deaf;
   --page-blue: #3f76ed;
   --page-museifu-dark: #0c0c0c;
   --page-museifu-cream: #ffd698;
   --page-museifu-paperlike: #ffffff;
+  /* --page-museifu-darkpaper: #0c0c0c; */
   --page-museifu-paperdark: #000000;
+  --page-museifu-simple: red;
 
   /* Default Variables */
   --page-color: var(--page-manila);
@@ -73,6 +76,41 @@ https://github.com/account-not-relevant
 }
 
 
+
+
+
+
+
+/* after adding to the theme, remove this */
+.titlebar-button-container.mod-right {
+  height: 20px;
+}
+
+
+
+
+
+
+/* Metadata modifications - you can delete to reset and it won't cause problems */
+
+.metadata-container:is(.is-collapsed) .metadata-properties-title,
+.collapse-indicator.collapse-icon.is-collapsed {
+  color: var(--accent-color);
+  opacity: 0.4;
+  transition-duration: 0.3s;
+
+}
+
+.metadata-properties-title:hover {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+.metadata-container {
+  background-color: var(--accent-color-trans);
+  padding: 10px;
+  border-radius: 15px;
+}
 
 /* Recolors images on the page with the current accent color. */
 .recolor-images img {
@@ -92,7 +130,8 @@ https://github.com/account-not-relevant
 .page-museifu-dark,
 .page-museifu-cream,
 .page-museifu-paperlike,
-.page-museifu-paperdark {
+.page-museifu-paperdark,
+.page-museifu-simple {
   --text-normal: var(--accent-color);
   --text-muted: var(--accent-color);
   --text-faint: var(--accent-color-trans);
@@ -164,6 +203,9 @@ https://github.com/account-not-relevant
   --image-effect: brightness(0) saturate(100%) invert(14%) sepia(19%)
     saturate(296%) hue-rotate(5deg) brightness(90%) contrast(96%);
   color-scheme: light;
+  --bold-color: rgb(0, 0, 0);
+  --italic-color: rgb(74, 77, 74);
+  --link-external-color: rgb(0, 0, 0);
 }
 .embed-white img {
   background-color: var(--page-white);
@@ -286,7 +328,6 @@ https://github.com/account-not-relevant
     transparent
   );
   --image-effect: brightness(0) saturate(100%) invert(16%) sepia(15%) saturate(270%) hue-rotate(2deg) brightness(100%) contrast(92%);
-  /* wrong image effect */
 
   color-scheme: dark;
   --hr-color: var(--accent-color);
@@ -302,10 +343,10 @@ https://github.com/account-not-relevant
 
 .page-museifu-paperdark::before { 
   content: "";
-  background-color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color) 50%, transparent 100%);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
   background-repeat: repeat;
-  background-size: 1500px;
+  background-size: 1200px;
   opacity: 0.32;
   top: 20px;
   left: 0px;
@@ -316,6 +357,25 @@ https://github.com/account-not-relevant
   border-radius: 40px;
 }
 
+
+.page-museifu-simple {
+  --page-color: color-mix(in srgb, var(--accent-color) 10%, transparent 80%);
+  --accent-color: var(--pen-museifu-simple);
+  --accent-color-trans: color-mix(
+    in srgb,
+    var(--accent-color) 15%,
+    transparent
+  );
+    --image-effect: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(1248%) hue-rotate(250deg) brightness(103%) contrast(92%);
+  color-scheme: dark;
+  
+  --link-color: (var(--accent-color));
+  --link-external-color: (var(--accent-color));
+  --text-highlight-bg: var(--accent-color-trans);
+  --code-background: var(--accent-color-trans);
+  --link-color-hover: var(--accent-color);
+  --link-unresolved-color: var(--accent-color);
+}
 
 /* Adds a grid layout on page background */
 .page-grid {
@@ -355,7 +415,8 @@ https://github.com/account-not-relevant
     .pen-museifu-dark,
     .pen-museifu-cream,
     .pen-museifu-paperlike,
-    .pen-museifu-paperdark
+    .pen-museifu-paperdark,
+    .pen-museifu-simple
   )
   svg {
   color: color-mix(in srgb, var(--accent-color) 60%, transparent);
@@ -518,7 +579,6 @@ https://github.com/account-not-relevant
   --accent-color-trans: color-mix(in srgb, var(--pen-museifu-paperdark) 15%, transparent);
   color: var(--accent-color);
   --image-effect: brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(1248%) hue-rotate(250deg) brightness(103%) contrast(92%);
-  /* wrong image effect */
   --hr-color: var(--accent-color);
   --bold-color: #e9e9e9;
   --italic-color: #d8d8d8;

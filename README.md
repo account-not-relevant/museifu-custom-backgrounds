@@ -1,4 +1,4 @@
-# Museifu Custom Backgrounds v1.1.1
+# Museifu Custom Backgrounds v1.1.2
 Custom backgrounds adapted or created for the [Museifu Theme](https://github.com/account-not-relevant/museifu-theme) on Obsidian. This CSS snippet is needed for Museifu Theme work accordingly, so have it activated all the time, even if not using the note modifications, if you plan on using Museifu.
 
 Based on [Obsidian Notebook Themes](https://github.com/CyanVoxel/Obsidian-Notebook-Themes) v2.1.0.
@@ -28,6 +28,7 @@ _Work in progress._
 - `pen-museifu-cream` - applies the pen color of Museifu Cream
 - `pen-museifu-paperlike` - applies the pen color of Museifu Paperlike
 - `pen-museifu-paperdark` - applies the pen color of Museifu Darkpaper
+- `pen-museifu-simple` - same as `pen-white`
 
 ### Page colors and effects
   - `page-dots` - adds dots to the page background
@@ -43,6 +44,7 @@ _Work in progress._
   - `page-museifu-cream` - turns the background cream-like (very light brown)
   - `page-museifu-paperlike` - turns the background white and adds a paper effect to it
   - `page-museifu-paperdark` - turns the background gray and adds a paper effect to it
+  - `page-museifu-simple` - turns the background slightly to the color of the pen you choose
   - `soft-block-grid` - turns the background into a blocky, gray one (must apply some grid before)
   - `black-block-grid` - turns the background into a blocky, black one (must apply some grid before)
 
